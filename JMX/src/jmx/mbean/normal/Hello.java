@@ -2,7 +2,7 @@ package jmx.mbean.normal;
 
 
 public class Hello implements HelloMBean {
-	private String name;
+	private String name="Hello";
 	
 	public void printHello(){
 		System.out.println("Hello World, I'am " + name);

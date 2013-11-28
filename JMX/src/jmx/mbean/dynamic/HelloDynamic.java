@@ -157,4 +157,7 @@ public class HelloDynamic implements DynamicMBean {
 		return mBeanInfo;
 	}
 
+	public String getName(){
+		return "HellOoooO!";
+	}
 }
