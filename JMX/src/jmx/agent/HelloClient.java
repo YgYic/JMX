@@ -27,7 +27,7 @@ public class HelloClient {
 	}
 
 	private static JMXConnector getConnection() throws IOException {
-		JMXServiceURL url = new JMXServiceURL("jdmk-http", "192.168.1.104", 6868);
+		JMXServiceURL url = new JMXServiceURL("jmxmp", "192.168.1.104", 6868);
 
 		JMXConnector jmxc = JMXConnectorFactory.connect(url);
 		System.out.println("connect success.");

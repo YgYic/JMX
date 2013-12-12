@@ -30,10 +30,10 @@ public class HelloAgent {
 		ObjectName helloName = new ObjectName("huangdie:name=HelloWorld");
 		server.registerMBean(new Hello(), helloName);
 		try {
-			JMXServiceURL httpURL = new JMXServiceURL("jdmk-http", "127.0.0.1", 6868);
+			JMXServiceURL httpURL = new JMXServiceURL("jmxmp", "127.0.0.1", 6868);
 			JMXConnectorServer httpCS = JMXConnectorServerFactory.newJMXConnectorServer(httpURL, null, server);
 			System.out.println("\nCreate a wrapped jdmk-http connector server at: "	+ httpURL);
-			ObjectName httpON = new ObjectName("legacyWrapper:protocol=jdmk-http,port=6868");
+			ObjectName httpON = new ObjectName("legacyWrapper:protocol=jmxmp,port=6868");
 			server.registerMBean(httpCS, httpON);
 			System.out.println("The wrapped server has been registered with name "+ httpON);
 			// Start the jdmk-http connector server
